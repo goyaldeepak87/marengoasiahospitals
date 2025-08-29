@@ -24,3 +24,107 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.MuiSvgIcon-root {
+  fill: gray;
+  width: 23px;
+}
+
+.subtitle::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #007dc7;
+  /* Change this to your desired color */
+  margin-top: 1px;
+  /* Space between text and line */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2px;
+  /* Optional: rounded corners */
+}
+
+@media (max-width: 600px) {
+  .subtitle::after {
+    width: 45px;
+    height: 3px;
+    margin-top: -2px;
+    margin-bottom: 3px;
+  }
+}
+
+.react-datepicker-wrapper {
+  width: 100% !important;
+}
+
+.list_icons::before {
+  content: "";
+  position: absolute;
+  background-image: url(../../public/check_circle_broken.svg);
+  background-size: cover;
+  width: 16px;
+  height: 16px;
+  left: 0px;
+  top: 4px;
+}
+
+.colorsubtitle::after {
+  background-color: white;
+  height: 2px;
+}
+
+ul {
+  padding-left: 0px;
+}
+
+@media (max-width: 600px) {
+  .slider_container ul {
+    bottom: -6px;
+  }
+
+  .slider_container li button:before {
+    font-size: 8px !important;
+  }
+
+  .slider_container li {
+    width: 8px !important;
+    height: 8px !important;
+  }
+
+  .arrow_slider {
+    display: none !important;
+  }
+}
+
+@media (max-width: 639px) and (min-width: 370px) {
+  .footer_logo img {
+    width: calc(11% + 10px);
+    /* Make the image 10% smaller */
+  }
+}
+
+@media (max-width: 639px) and (min-width: 300px) {
+  .divderline>div::after {
+    content: "";
+    background-color: #ccc;
+    width: 54%;
+    height: 1px;
+    margin-top: 10px;
+    display: block;
+    position: absolute;
+    bottom: -23px;
+    /* Space between content and line */
+  }
+}
+
+.divderline>div {
+  position: relative;
+
+}
+
+.dividerlinenone::after {
+  display: none !important;
+}
+
+/*  */
