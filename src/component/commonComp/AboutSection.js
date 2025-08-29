@@ -1,6 +1,9 @@
+'use client';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect } from 'react';
 import aboutImg from '../../../public/about-right-col.jpg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // List of Hospital Info
 const hospitalInfo = [
@@ -45,7 +48,12 @@ const hospitalInfo = [
   },
 ];
 
+
+
 const AboutSection = () => {
+  useEffect(() => {
+    AOS.init(); // Initialize AOS
+  }, []);
   return (
     <section className="sm:pt-5 pt-0 lg:pt-5 md:pt-5 mt-0" id="about">
       {/* Container for Heading and Text */}
@@ -87,6 +95,8 @@ const AboutSection = () => {
                   alt="About Image"
                   className="lg:absolute md:relative md:w-[100%] right-0 lg:top-0  md:w-[60] lg:w-[39.3%] xl:w-auto h-[88%] lg:my-9 object-contain lg:rounded-tl-[16px] rounded-br-none rounded-tr-none lg:rounded-bl-[16px]"
                   priority
+                  data-aos="zoom-in"  // Add the AOS effect here
+                  data-aos-duration="1000"  // Set the duration
                 />
               </div>
             </div>
