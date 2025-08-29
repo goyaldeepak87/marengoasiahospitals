@@ -1,4 +1,4 @@
-'use client'; 
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import { useFormik } from 'formik';
@@ -65,7 +65,7 @@ const AppointmentForm = () => {
           >
             <div className="grid items-end grid-cols-1 lg:grid-cols-5 md:grid-cols-2 sm:grid-cols-2 gap-4">
               {/* Name Input */}
-              <div className="form-group">
+              <div className="form-group relative">
                 <label className="sm:text-sm text-[14px] text-black mb-2">Enter Name</label>
                 <input
                   className="form-control w-full text-[14px] sm:text-[16px] p-2 border border-gray-300 rounded-[15px]"
@@ -77,12 +77,12 @@ const AppointmentForm = () => {
                   placeholder="Enter Name"
                 />
                 {formik.touched.name && formik.errors.name && (
-                  <div className="text-red-500 text-sm mt-1">{formik.errors.name}</div>
+                  <div className="text-red-500 text-sm mt-1 absolute text-xs left-4 bottom-[-17px]">{formik.errors.name}</div>
                 )}
               </div>
 
               {/* Phone Number Input */}
-              <div className="form-group">
+              <div className="form-group relative">
                 <label className="text-sm text-black mb-2 sm:text-sm text-[14px]">Mobile Number</label>
                 <input
                   className="form-control w-full text-[14px] sm:text-[16px] p-2 border border-gray-300 rounded-[15px]"
@@ -97,12 +97,12 @@ const AppointmentForm = () => {
                   placeholder="Enter Phone"
                 />
                 {formik.touched.phone && formik.errors.phone && (
-                  <div className="text-red-500 text-sm mt-1">{formik.errors.phone}</div>
+                  <div className="text-red-500 text-sm mt-1 absolute text-xs left-4 bottom-[-17px]">{formik.errors.phone}</div>
                 )}
               </div>
 
               {/* File Upload */}
-              <div className="form-group">
+              <div className="form-group relative">
                 <label className="text-sm text-black mb-2 sm:text-sm text-[14px]">Upload Report</label>
                 <input
                   className="form-control w-full p-2 text-[14px] sm:text-[16px] border border-gray-300 rounded-[15px]"
@@ -112,7 +112,7 @@ const AppointmentForm = () => {
                   onChange={(event) => formik.setFieldValue("report", event.currentTarget.files[0])}
                 />
                 {formik.touched.report && formik.errors.report && (
-                  <div className="text-red-500 text-sm mt-1">{formik.errors.report}</div>
+                  <div className="text-red-500 text-sm mt-1 absolute text-xs left-4 bottom-[-17px]">{formik.errors.report}</div>
                 )}
               </div>
 
@@ -128,8 +128,9 @@ const AppointmentForm = () => {
                   dateFormat="dd/MM/yyyy"
                   placeholderText="Select a date"
                 />
+                <div className='absolute lg:right-4 md:right-3 top-8 md:top-8 right-3 text-gray-400'> <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-14yq2cq" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CalendarMonthIcon"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 16H5V10h14zM9 14H7v-2h2zm4 0h-2v-2h2zm4 0h-2v-2h2zm-8 4H7v-2h2zm4 0h-2v-2h2zm4 0h-2v-2h2z"></path></svg> </div>
                 {formik.touched.appointmentDate && formik.errors.appointmentDate && (
-                  <div className="text-red-500 text-sm mt-1">{formik.errors.appointmentDate}</div>
+                  <div className="text-red-500 text-sm mt-1 absolute text-xs left-4 bottom-[-17px]">{formik.errors.appointmentDate}</div>
                 )}
               </div>
 
